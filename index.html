@@ -77,17 +77,17 @@
       "name": "Servicios de nutrición y antropometría",
       "itemListElement": [
         {"@type": "Offer", "price": "139", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
-         "itemOffered": {"@type": "Service", "name": "Pack Recomposición Corporal (6 semanas)", "description": "Antropometría ISAK II, plan nutricional personalizado y 2 seguimientos con re-medición. Presencial en Palma de Mallorca."}},
+         "itemOffered": {"@type": "Service", "name": "Pack Recomposición Corporal (6 semanas)", "description": "Plan nutricional personalizado, medición de composición corporal por antropometría ISAK II y 2 controles de seguimiento. Presencial en Palma de Mallorca. Ahorro de 20 € frente a contratar los servicios por separado."}},
         {"@type": "Offer", "price": "89", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
-         "itemOffered": {"@type": "Service", "name": "Pack Online", "description": "Primera consulta con plan personalizado y 2 controles de seguimiento por videollamada."}},
+         "itemOffered": {"@type": "Service", "name": "Pack Online", "description": "Plan nutricional personalizado y 2 controles de seguimiento por videollamada. Ahorro de 11 € frente a contratar los servicios por separado."}},
         {"@type": "Offer", "price": "79", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
-         "itemOffered": {"@type": "Service", "name": "Seguimiento mensual presencial", "description": "Un control presencial al mes con re-medición ISAK II, ajuste de plan y WhatsApp directo. Cuota mensual, sin permanencia."}},
+         "itemOffered": {"@type": "Service", "name": "Seguimiento mensual presencial", "description": "Un control presencial al mes con medición de composición corporal, ajuste de plan y WhatsApp directo. Cuota mensual, sin permanencia."}},
         {"@type": "Offer", "price": "69", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
          "itemOffered": {"@type": "Service", "name": "Plan Nutricional Personalizado presencial", "description": "Plan completo con menú semanal y cantidades, incluye antropometría ISAK II."}},
         {"@type": "Offer", "price": "55", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
          "itemOffered": {"@type": "Service", "name": "Seguimiento mensual online", "description": "Un control mensual por videollamada con ajuste de plan y WhatsApp directo. Cuota mensual, sin permanencia."}},
         {"@type": "Offer", "price": "45", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
-         "itemOffered": {"@type": "Service", "name": "Control presencial con re-medición ISAK II", "description": "Sesión de seguimiento presencial en Palma con nueva antropometría ISAK II, comparativa con la medición anterior y ajuste del plan."}},
+         "itemOffered": {"@type": "Service", "name": "Control presencial con medición de composición corporal", "description": "Sesión de seguimiento presencial en Palma con medición de composición corporal, comparativa con la medición anterior y ajuste del plan."}},
         {"@type": "Offer", "price": "40", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
          "itemOffered": {"@type": "Service", "name": "Antropometría ISAK II", "description": "Medición profesional de composición corporal con caliper calibrado e informe escrito. 30 minutos."}},
         {"@type": "Offer", "price": "40", "priceCurrency": "EUR", "availability": "https://schema.org/InStock",
@@ -248,6 +248,15 @@
     .service-card .service-desc { color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 0.95rem; flex: 1; }
     .service-price { font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem; }
     .service-price small { display: block; font-size: 0.85rem; font-weight: 400; color: var(--color-text-muted); margin-top: 0.25rem; }
+    /* Lista de "qué incluye" dentro de las tarjetas de pack */
+    .service-includes { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+    .service-includes li { position: relative; padding-left: 1.6rem; margin-bottom: 0.55rem; font-size: 0.92rem; color: var(--color-text-light); line-height: 1.45; }
+    .service-includes li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 0.85rem; height: 0.5rem; border-left: 2px solid var(--color-primary); border-bottom: 2px solid var(--color-primary); transform: rotate(-45deg); }
+    .service-includes strong { color: var(--color-text); font-weight: 600; }
+    /* Comparativa con el precio de contratar los servicios sueltos */
+    .service-saving { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--color-text-muted); margin: -0.5rem 0 1rem; }
+    .service-saving s { text-decoration-thickness: 1px; }
+    .service-saving b { background: var(--color-accent); color: #fff; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.02em; padding: 0.2rem 0.55rem; border-radius: 100px; }
     .anthropometry { background: var(--color-primary); color: white; }
     .anthropometry h2, .anthropometry h3 { color: white; }
     .anthro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
@@ -430,8 +439,15 @@
         <div class="service-card featured">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
           <h3>Pack Recomposición Corporal</h3>
-          <p class="service-desc">Antropometría ISAK II + plan nutricional personalizado + 2 seguimientos con re-medición. Proceso completo de 6 semanas (1 mes y medio) para bajar grasa y ganar masa muscular con datos reales. WhatsApp directo para dudas entre consultas.</p>
+          <p class="service-desc">El proceso completo de 6 semanas para bajar grasa y ganar masa muscular con datos reales. Todo incluido:</p>
+          <ul class="service-includes">
+            <li><strong>Plan Nutricional Personalizado</strong> con menú semanal, recetas y cantidades</li>
+            <li><strong>Medición de composición corporal</strong> por Antropometría ISAK II, con informe</li>
+            <li><strong>2 controles de seguimiento</strong> para ver los cambios y ajustar el plan</li>
+            <li>WhatsApp directo para dudas entre consultas</li>
+          </ul>
           <div class="service-price">139 €<small>Presencial · 6 semanas (1 mes y medio)</small></div>
+          <div class="service-saving"><span>Por separado: <s>159 €</s></span> <b>Ahorrás 20 €</b></div>
           <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20me%20interesa%20el%20Pack%20Recomposici%C3%B3n%20Corporal" class="btn btn-primary" target="_blank" rel="noopener">Reservar →</a>
         </div>
         <div class="service-card">
@@ -444,9 +460,9 @@
         <div class="service-card">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></div>
           <h3>Control presencial</h3>
-          <p class="service-desc">Sesión de seguimiento en Palma con <strong>nueva antropometría ISAK II</strong>. Comparamos con tu medición anterior, vemos qué cambió de verdad y ajustamos el plan. Recomendado cada 6-8 semanas.</p>
-          <div class="service-price">45 €<small>Presencial · 30-40 min · Incluye re-medición ISAK II</small></div>
-          <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20quiero%20reservar%20un%20Control%20presencial%20con%20re-medici%C3%B3n%20ISAK%20II" class="btn btn-secondary" target="_blank" rel="noopener">Reservar →</a>
+          <p class="service-desc">Sesión de seguimiento en Palma con <strong>medición de composición corporal</strong>. Comparamos con tu medición anterior, vemos qué cambió de verdad y ajustamos el plan. Recomendado cada 6-8 semanas.</p>
+          <div class="service-price">45 €<small>Presencial · 30-40 min · Incluye medición de composición corporal</small></div>
+          <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20quiero%20reservar%20un%20Control%20presencial" class="btn btn-secondary" target="_blank" rel="noopener">Reservar →</a>
         </div>
         <div class="service-card">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
@@ -461,8 +477,14 @@
         <div class="service-card featured">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
           <h3>Pack Online</h3>
-          <p class="service-desc">Primera consulta con plan personalizado + 2 controles de seguimiento por videollamada. Proceso completo a distancia, con WhatsApp directo para dudas entre consultas.</p>
-          <div class="service-price">89 €<small>Online · 1 primera consulta + 2 controles</small></div>
+          <p class="service-desc">El proceso completo a distancia, desde cualquier parte del mundo. Todo incluido:</p>
+          <ul class="service-includes">
+            <li><strong>Plan Nutricional Personalizado</strong> con menú semanal, recetas y cantidades</li>
+            <li><strong>2 controles de seguimiento</strong> por videollamada para ajustar el plan</li>
+            <li>WhatsApp directo para dudas entre consultas</li>
+          </ul>
+          <div class="service-price">89 €<small>Online · Primera consulta + 2 controles</small></div>
+          <div class="service-saving"><span>Por separado: <s>100 €</s></span> <b>Ahorrás 11 €</b></div>
           <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20me%20interesa%20el%20Pack%20Online" class="btn btn-primary" target="_blank" rel="noopener">Reservar →</a>
         </div>
         <div class="service-card">
@@ -490,7 +512,7 @@
         <div class="service-card highlight">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="m9 16 2 2 4-4"/></svg></div>
           <h3>Seguimiento mensual presencial</h3>
-          <p class="service-desc">Un control al mes en Palma con re-medición ISAK II, ajuste de plan y WhatsApp directo para dudas durante todo el mes. La forma más sencilla de no perder el hilo entre consulta y consulta.</p>
+          <p class="service-desc">Un control al mes en Palma con medición de composición corporal, ajuste de plan y WhatsApp directo para dudas durante todo el mes. La forma más sencilla de no perder el hilo entre consulta y consulta.</p>
           <div class="service-price">79 €<small>Al mes · Presencial · Sin permanencia</small></div>
           <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20me%20interesa%20el%20Seguimiento%20mensual%20presencial" class="btn btn-secondary" target="_blank" rel="noopener">Quiero info →</a>
         </div>
@@ -504,7 +526,7 @@
         <div class="service-card highlight">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M12 7v14"/><path d="M2 12h20"/><path d="M12 7a3 3 0 1 0-3-3c0 1.7 1.3 3 3 3Z"/><path d="M12 7a3 3 0 1 1 3-3c0 1.7-1.3 3-3 3Z"/></svg></div>
           <h3>Bono 3 controles presenciales</h3>
-          <p class="service-desc">Tres controles presenciales con re-medición ISAK II para usar a lo largo de 6 meses. Ahorrás 15 € frente a comprarlos sueltos y te asegurás el seguimiento completo.</p>
+          <p class="service-desc">Tres controles presenciales con medición de composición corporal para usar a lo largo de 6 meses. Ahorrás 15 € frente a comprarlos sueltos y te asegurás el seguimiento completo.</p>
           <div class="service-price">120 €<small>3 controles · Ahorrás 15 € · Válido 6 meses</small></div>
           <a href="https://wa.me/34643759339?text=Hola%20Jazmin%2C%20me%20interesa%20el%20Bono%20de%203%20controles%20presenciales" class="btn btn-secondary" target="_blank" rel="noopener">Quiero info →</a>
         </div>
